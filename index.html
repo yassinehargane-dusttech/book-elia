@@ -162,93 +162,91 @@ section[id]{scroll-margin-top:110px}
 @media (max-width:480px){.lang svg{display:none}.lang button{padding:0 9px}.cobrand svg{height:20px}}
 </style>
 <style>
-.bk{max-width:1040px;margin:0 auto;padding:150px 20px 72px}
-.bk-top{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap;margin-bottom:32px}
-.bk-top .stack{gap:16px}
-.meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-.who{display:inline-flex;align-items:center;gap:12px}
-.av{width:44px;height:44px;flex:none;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
+html,body{height:100%}
+body{display:flex;align-items:center;justify-content:center;min-height:100dvh;padding:24px;background:#fff}
+.shell{display:grid;grid-template-columns:360px minmax(0,1fr);width:100%;max-width:1180px;height:min(calc(100dvh - 48px),760px);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:#fff}
+/* volet gauche */
+.pane{position:relative;background:var(--night);color:#fff;padding:36px 32px 32px;display:flex;flex-direction:column;gap:28px;overflow:hidden}
+.pane-top{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.pane-top svg{height:20px;width:auto;display:block}
+.pane .lang{background:transparent;border-color:rgba(255,255,255,.18)}
+.pane .lang button{color:rgba(255,255,255,.7)}
+.pane .mono{color:rgba(255,255,255,.6)}
+.pane .h3{font-size:48px;line-height:46px;color:#fff}
+.pane .h3 em{color:var(--lime)}
+.who{display:flex;align-items:center;gap:12px}
+.av{width:40px;height:40px;flex:none;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr}
 .av i{display:block}
-.who b{font:400 22px/26px var(--serif);display:block}
-.who small{font-size:13px;line-height:18px;color:var(--ink-3)}
-.res{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 20px 0 14px;border-radius:8px;background:var(--lime-l);color:var(--green-d);font:500 15px/1 var(--sans);text-decoration:none;transition:background-color .3s var(--cb)}
-.res:hover{background:var(--lime)}
-.res i{display:block;width:18px;height:18px;border-radius:50%;background:var(--green)}
-.hdr-bar .res{height:40px;padding:0 14px 0 10px}
-.hdr-bar .res i{width:14px;height:14px}
-.cal{background:var(--pill);border-radius:16px;padding:8px}
-.cal iframe{display:block;width:100%;height:660px;border:0;border-radius:12px;background:#fff}
-.cal-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:12px 10px 4px;font-size:13px;color:var(--ink-3)}
-.mini{display:flex}.mini i{display:block;width:20px;height:20px}
-.oc{padding:56px;display:flex;flex-direction:column;gap:20px;align-items:flex-start;background:var(--blue-l);border-radius:12px;min-height:420px;justify-content:flex-end}
-.oc-shapes{display:flex;margin-bottom:auto}.oc-shapes i{display:block;width:64px;height:64px}
-.grid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:16px;align-items:start}
-.deck{position:sticky;top:120px;background:var(--lime-l);border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:14px}
-.deck-cover{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;align-content:center;aspect-ratio:16/10;background:#fff;border-radius:12px;padding:16px;transition:transform .3s var(--cb)}
-.deck-cover:hover{transform:translateY(-3px)}
-.deck-cover i{display:block;width:22%;aspect-ratio:1}
-.deck .h5 em{font-style:italic}
-.deck .st{font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:6px 8px;border-radius:6px;background:#fff;color:var(--green-d);width:max-content}
-.deck-btn{width:100%}
-.bk{max-width:1240px}footer.sm{max-width:1240px}
-@media (max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}.deck{position:static;order:-1;display:grid;grid-template-columns:96px minmax(0,1fr);grid-template-rows:auto auto auto;column-gap:16px;row-gap:8px;align-items:center}.deck-cover{grid-row:1/3;padding:14px;aspect-ratio:1}.deck-cover i{width:50%}.deck .p2{display:none}.deck-btn{grid-column:1/-1}}
-footer.sm{max-width:1040px;margin:0 auto;padding:24px 20px 32px}
-@media (max-width:640px){.bk{padding-top:130px}.res{width:100%;justify-content:center}.cal{margin-inline:-12px}.cal iframe{height:920px}.oc{padding:28px;min-height:0}.oc-shapes i{width:44px;height:44px}.oc-shapes{margin-bottom:24px}}
+.who b{font:400 20px/24px var(--serif);display:block;color:#fff}
+.who small{font-size:13px;line-height:18px;color:rgba(255,255,255,.6)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font:400 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.16);border-radius:6px;padding:7px 8px}
+.deck{margin-top:-12px;display:flex;align-items:center;gap:14px;padding:16px 16px 16px 18px;border-radius:14px;background:#2a2a2a;color:#fff;text-decoration:none;transition:background-color .3s var(--cb),color .3s var(--cb)}
+.deck .dt{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.deck .mono{color:var(--lime)}
+.deck b{font:400 24px/26px var(--serif)}
+.deck b em{font-style:italic}
+.deck .go{flex:none;width:40px;height:40px;border-radius:10px;background:var(--lime);color:var(--green-d);display:grid;place-items:center;font-size:18px;transition:transform .3s var(--cb)}
+.deck:hover{background:var(--lime);color:var(--green-d)}
+.deck:hover .mono{color:var(--green)}
+.deck:hover .go{background:var(--green);color:#fff;transform:translate(2px,-2px)}
+.deck:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
+.shapes{margin-top:auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.shapes i{display:block;aspect-ratio:1}
+/* volet droit */
+.calw{position:relative;min-height:0;display:flex;background:#fff}
+.calw iframe{flex:1;width:100%;height:100%;border:0;display:block}
+.oc{flex:1;padding:56px;display:flex;flex-direction:column;gap:20px;align-items:flex-start;justify-content:center}
+.oc .h3 em{font-style:italic}
+@media (max-width:900px){
+  body{display:block;padding:12px}
+  .shell{grid-template-columns:minmax(0,1fr);height:auto;border-radius:20px}
+  .pane{padding:24px 20px;gap:20px}
+  .pane .h3{font-size:38px;line-height:38px}
+  .shapes{display:none}
+  .deck{margin-top:4px}
+  .calw iframe{height:900px;flex:none}
+  .oc{padding:28px}
+}
 </style>
 
-<header class="hdr" data-dm-header>
-  <div class="hdr-bar" data-dm-header-bar>
-    <a class="cobrand" href="https://dust.tt" target="_blank" rel="noopener" aria-label="Dust">
-      <svg viewBox="0 0 1312 328" fill="none" role="img" aria-label="Dust"><path d="M1148 164H984V328H1148V164Z" fill="#FE9C1A"></path><path d="M164 328C254.575 328 328 254.575 328 164C328 73.4253 254.575 0 164 0C73.4253 0 0 73.4253 0 164C0 254.575 73.4253 328 164 328Z" fill="#E2F78C"></path><path d="M492 328C582.575 328 656 254.575 656 164C656 73.4253 582.575 0 492 0C401.425 0 328 73.4253 328 164C328 254.575 401.425 328 492 328Z" fill="#FFC3DF"></path><path d="M164 0H0V328H164V0Z" fill="#418B5C"></path><path d="M656 0H328V164H656V0Z" fill="#E14322"></path><path d="M1312 0V164H820C774.713 164 738 127.287 738 82C738 36.7127 774.713 0 820 0H1312Z" fill="#1C91FF"></path><path d="M656 328V164H820C865.287 164 902 200.713 902 246C902 291.287 865.287 328 820 328H656Z" fill="#9FDBFF"></path></svg>
+<main class="shell" id="top">
+  <aside class="pane">
+    <div class="pane-top">
+      <a href="https://dust.tt" target="_blank" rel="noopener" aria-label="Dust"><svg viewBox="0 0 1312 328" fill="none" role="img" aria-label="Dust"><path d="M1148 164H984V328H1148V164Z" fill="#FE9C1A"></path><path d="M164 328C254.575 328 328 254.575 328 164C328 73.4253 254.575 0 164 0C73.4253 0 0 73.4253 0 164C0 254.575 73.4253 328 164 328Z" fill="#E2F78C"></path><path d="M492 328C582.575 328 656 254.575 656 164C656 73.4253 582.575 0 492 0C401.425 0 328 73.4253 328 164C328 254.575 401.425 328 492 328Z" fill="#FFC3DF"></path><path d="M164 0H0V328H164V0Z" fill="#418B5C"></path><path d="M656 0H328V164H656V0Z" fill="#E14322"></path><path d="M1312 0V164H820C774.713 164 738 127.287 738 82C738 36.7127 774.713 0 820 0H1312Z" fill="#1C91FF"></path><path d="M656 328V164H820C865.287 164 902 200.713 902 246C902 291.287 865.287 328 820 328H656Z" fill="#9FDBFF"></path></svg></a>
+      <div class="lang" data-dm-tabs role="group" aria-label="Langue / Language"><button data-lang-btn="fr" aria-pressed="false">FR</button><button data-lang-btn="en" aria-pressed="true">EN</button></div>
+    </div>
+
+    <div class="stack" style="gap:16px;position:relative;z-index:1">
+      <p class="mono" data-dm-mono data-dm-delay=".2"><span lang="fr">Prendre rendez-vous</span><span lang="en">Book a meeting</span></p>
+      <h1 class="h3" data-dm-title data-dm-autoplay data-dm-delay=".3"><span lang="fr">Un créneau<br><em>avec Elia.</em></span><span lang="en">Book time<br><em>with Elia.</em></span></h1>
+    </div>
+
+    <div class="who" data-dm-anim data-dm-delay=".6">
+      <span class="av" aria-hidden="true"><i style="background:var(--green);border-radius:100% 0 0 0"></i><i style="background:var(--lime);border-radius:0 100% 0 0"></i><i style="background:var(--sky);border-radius:0 0 0 100%"></i><i style="background:var(--blue);border-radius:0 0 100% 0"></i></span>
+      <span><b data-author>Elia Kemp</b><small data-author-role>Account Executive · Dust</small></span>
+    </div>
+
+    <div class="chips" data-dm-anim data-dm-delay=".7">
+      <span>15 · 30 min</span><span lang="fr">Visio</span><span lang="en">Video call</span><span>EN · FR</span>
+    </div>
+
+    <div class="shapes" aria-hidden="true" data-dm-anim data-dm-delay=".75"><i style="background:var(--green);border-radius:50%"></i><i style="background:var(--pink);border-radius:99px 99px 0 0"></i><i style="background:var(--lime)"></i><i style="background:var(--sky);border-radius:0 0 99px 99px"></i><i style="background:var(--orange);border-radius:0 100% 0 0"></i><i style="background:var(--blue);border-radius:50%"></i></div>
+
+    <a class="deck" href="https://app.dust.tt/share/frame/7d9232f7-75fa-4cda-b581-0de6a923b894" target="_blank" rel="noopener" data-dm-anim data-dm-delay=".8">
+      <span class="dt"><span class="mono"><span lang="fr">Deck · avant l'appel</span><span lang="en">Deck · before the call</span></span><b><span lang="fr">Dust, <em>c'est quoi ?</em></span><span lang="en">What is <em>Dust?</em></span></b></span>
+      <span class="go" aria-hidden="true">↗</span>
     </a>
-    <div class="row" style="gap:8px;flex-wrap:nowrap">
-      <div class="lang" data-dm-tabs role="group" aria-label="Langue / Language">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>
-        <button data-lang-btn="fr" aria-pressed="false">FR</button><button data-lang-btn="en" aria-pressed="true">EN</button>
-      </div>
-    </div>
-  </div>
-</header>
+  </aside>
 
-<main class="bk" id="top">
-  <div class="bk-top">
-    <div class="stack">
-      <p class="mono" data-dm-mono data-dm-delay=".2"><span lang="fr">Prendre rendez-vous · 15 ou 30 min</span><span lang="en">Book a meeting · 15 or 30 min</span></p>
-      <h1 class="h2" data-dm-title data-dm-autoplay data-dm-delay=".3"><span lang="fr">Un créneau <em>avec Elia.</em></span><span lang="en">Book time <em>with Elia.</em></span></h1>
-      <div class="who" data-dm-anim data-dm-delay=".7">
-        <span class="av" aria-hidden="true"><i style="background:var(--green);border-radius:100% 0 0 0"></i><i style="background:var(--lime);border-radius:0 100% 0 0"></i><i style="background:var(--sky);border-radius:0 0 0 100%"></i><i style="background:var(--blue);border-radius:0 0 100% 0"></i></span>
-        <span><b data-author>Elia Kemp</b><small data-author-role>Account Executive · Dust</small></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid">
-  <div class="cal" data-dm-anim data-dm-delay=".5">
+  <section class="calw" data-dm-anim data-dm-delay=".4" aria-label="Calendar / Agenda">
     <div class="oc">
-      <div class="oc-shapes" aria-hidden="true"><i style="background:var(--green);border-radius:50%"></i><i style="background:var(--sky);border-radius:99px 99px 0 0"></i><i style="background:var(--pink);border-radius:0 0 99px 99px"></i><i style="background:var(--lime);border-radius:0 100% 0 0"></i><i style="background:var(--orange)"></i></div>
+      <p class="mono k"><span lang="fr">Agenda d'Elia</span><span lang="en">Elia's calendar</span></p>
       <h2 class="h3"><span lang="fr">Voir les créneaux <em>disponibles.</em></span><span lang="en">See <em>available slots.</em></span></h2>
       <a class="btn green dm-btn" href="https://meetings-eu1.hubspot.com/elia-kemp" target="_blank" rel="noopener"><span lang="fr">Choisir un créneau ↗</span><span lang="en">Pick a slot ↗</span></a>
     </div>
-    <div class="cal-foot">
-      <span><span lang="fr">Visio · invitation envoyée dès la réservation · en anglais ou en français</span><span lang="en">Video call · invite sent as soon as you book · English or French</span></span>
-      <span class="mini" aria-hidden="true"><i style="background:var(--lime)"></i><i style="background:var(--orange);border-radius:50%"></i><i style="background:var(--red)"></i><i style="background:var(--pink);border-radius:50%"></i><i style="background:var(--blue);border-radius:99px 0 0 99px"></i></span>
-    </div>
-  </div>
-  <aside class="deck" data-dm-anim data-dm-delay=".7">
-    <a class="deck-cover" href="https://app.dust.tt/share/frame/7d9232f7-75fa-4cda-b581-0de6a923b894" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-      <i style="background:var(--green);border-radius:50%"></i><i style="background:var(--pink);border-radius:99px 99px 0 0"></i><i style="background:var(--sky)"></i><i style="background:var(--orange);border-radius:0 100% 0 0"></i>
-    </a>
-    <span class="st st-ok">Deck</span>
-    <h2 class="h5"><span lang="fr">Dust, <em>c'est quoi ?</em></span><span lang="en">What is <em>Dust?</em></span></h2>
-    <p class="p2"><span lang="fr">Le deck à parcourir avant l'appel : ce que fait Dust, pour qui, et comment ça marche.</span><span lang="en">The deck to skim before the call: what Dust does, who it's for, and how it works.</span></p>
-    <a class="btn green dm-btn deck-btn" href="https://app.dust.tt/share/frame/7d9232f7-75fa-4cda-b581-0de6a923b894" target="_blank" rel="noopener"><span lang="fr">Ouvrir le deck ↗</span><span lang="en">Open the deck ↗</span></a>
-  </aside>
-  </div>
+  </section>
 </main>
-
-<footer class="sm">
-  <div class="fbar" style="margin-top:0"><span class="mono">Dust · 2026</span><span data-if-author><span data-author></span> · Account Executive</span></div>
-</footer>
 
 <script>
 window.DUST_CONFIG = {
