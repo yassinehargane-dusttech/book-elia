@@ -1,4 +1,3 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Book with Elia</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
@@ -240,11 +239,21 @@ body{display:flex;align-items:center;justify-content:center;min-height:100dvh;pa
   </aside>
 
   <section class="calw" data-dm-anim data-dm-delay=".4" aria-label="Calendar / Agenda">
-    <div class="oc">
+    <div class="oc" id="calFallback">
       <p class="mono k"><span lang="fr">Agenda d'Elia</span><span lang="en">Elia's calendar</span></p>
       <h2 class="h3"><span lang="fr">Voir les créneaux <em>disponibles.</em></span><span lang="en">See <em>available slots.</em></span></h2>
       <a class="btn green dm-btn" href="https://meetings-eu1.hubspot.com/elia-kemp" target="_blank" rel="noopener"><span lang="fr">Choisir un créneau ↗</span><span lang="en">Pick a slot ↗</span></a>
     </div>
+    <script>
+    /* Agenda intégré partout, sauf sur claude.ai qui bloque les iframes externes */
+    (function(){
+      var h = location.hostname || '';
+      if (/claude|anthropic/i.test(h)) return;
+      var f = document.createElement('iframe');
+      f.src = 'https://meetings-eu1.hubspot.com/elia-kemp?embed=true'; f.title = 'Elia Kemp · HubSpot Meetings';
+      var fb = document.getElementById('calFallback'); fb.parentNode.replaceChild(f, fb);
+    })();
+    </script>
   </section>
 </main>
 
@@ -1314,5 +1323,3 @@ window.DUST_TITLE = { fr: "Réserver avec Elia", en: "Book with Elia" };
 
 </script>
 <script>DustMotion.init();</script>
-
-</body></html>
